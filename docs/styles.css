@@ -161,15 +161,6 @@ h1 {
 	flex-direction: column;
 }
 
-header h1::before {
-	content: '';
-	background: url('slinky.svg') center no-repeat;
-	background-size: 2em;
-	height: 2em;
-	margin-bottom: 1em;
-	width: 2em;
-}
-
 header p {
 	color: gray;
 	margin-top: 1em;

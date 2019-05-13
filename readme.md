@@ -1,39 +1,20 @@
-![](./slinky.png)
+# Slinky fork
 
-# Slinky
+Rather sweet menus. A light-weight, responsive, mobile-like navigation menu plugin
 
-Rather sweet menus
+This fork based by slinky plugin ([Demo](https://alizahid.github.io/slinky/))
 
-A light-weight, responsive, mobile-like navigation menu plugin
+###Base diffs
 
-### [Demo](https://alizahid.github.io/slinky/)
+1. More options for customisations
+2. Removed height jumping
 
-## Installation
-
-Download the [latest version](https://github.com/alizahid/slinky/releases). The files you need are
-
-- [dist/slinky.min.js](dist/slinky.min.js)
-- [dist/slinky.min.css](dist/slinky.min.css)
-
-### Bower
-
-	bower install jquery-slinky
+### Install
 
 Include these files
 
 	<script src="bower_components/slinky/dist/slinky.min.js"></script>
-
 	<link rel="stylesheet" src="bower_components/slinky/dist/slinky.min.css">
-
-### NPM
-
-	npm install jquery-slinky
-
-Include these files
-
-	<script src="node_modules/slinky/dist/slinky.min.js"></script>
-
-	<link rel="stylesheet" src="node_modules/slinky/dist/slinky.min.css">
 
 ## Usage
 
