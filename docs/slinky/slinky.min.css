@@ -33,12 +33,34 @@
       order: 1; }
 
 .slinky-theme-default {
-  background: #f6f7f8; }
+  background: #f6f7f8;
+  /*.next::after,
+  .back::before {
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICAgIDxwYXRoIGQ9Ik0xMi4yMTkgMi4yODFMMTAuNzggMy43MiAxOC4wNjIgMTFIMnYyaDE2LjA2M2wtNy4yODIgNy4yODEgMS40MzggMS40MzggOS05IC42ODctLjcxOS0uNjg3LS43MTl6IiAvPjwvc3ZnPg==) center no-repeat;
+    background-size: 1em;
+    content: '';
+    height: 1em;
+    opacity: 0.25;
+    transition: 200ms;
+    width: 1em;
+  }
+
+  .next::after {
+    margin-left: 1em;
+  }
+
+  .back::before {
+    padding: 1em;
+    transform: scaleX(-1);
+  }*/ }
   .slinky-theme-default .title {
     color: #333;
     padding: 1em; }
   .slinky-theme-default li {
     line-height: 1; }
+  .slinky-theme-default a > i {
+    width: 1em;
+    margin-right: 0.5em; }
   .slinky-theme-default a:not(.back) {
     color: #333;
     padding: 1em; }
@@ -46,21 +68,24 @@
       background: rgba(90, 200, 250, 0.25); }
     .slinky-theme-default a:not(.back):active {
       background: rgba(90, 200, 250, 0.5); }
-  .slinky-theme-default .next::after,
-  .slinky-theme-default .back::before {
+  .slinky-theme-default a.back {
+    padding: 1em; }
+  .slinky-theme-default .back-icon::before,
+  .slinky-theme-default .next-icon::after {
     background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICAgIDxwYXRoIGQ9Ik0xMi4yMTkgMi4yODFMMTAuNzggMy43MiAxOC4wNjIgMTFIMnYyaDE2LjA2M2wtNy4yODIgNy4yODEgMS40MzggMS40MzggOS05IC42ODctLjcxOS0uNjg3LS43MTl6IiAvPjwvc3ZnPg==) center no-repeat;
     background-size: 1em;
     content: '';
     height: 1em;
     opacity: 0.25;
     transition: 200ms;
-    width: 1em; }
-  .slinky-theme-default .next::after {
-    margin-left: 1em; }
-  .slinky-theme-default .back::before {
-    padding: 1em;
+    width: 1em;
+    display: inline-block; }
+  .slinky-theme-default .back-icon::before {
     -webkit-transform: scaleX(-1);
             transform: scaleX(-1); }
+  .slinky-theme-default .back-icon:hover::before,
+  .slinky-theme-default .next-icon:hover::after {
+    opacity: 0.75; }
   .slinky-theme-default .next:hover::after,
   .slinky-theme-default .back:hover::before {
     opacity: 0.75; }

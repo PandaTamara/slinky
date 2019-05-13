@@ -1,19 +1,22 @@
 /*
- * Slinky
+ * Fork Slinky
  * Rather sweetmenus
  * @author Ali Zahid <ali.zahid@live.com>
+ * @author fork Panda Tamara <link@mimika-team.ru>
  * @license MIT
  */
 
 class Slinky {
   // default options
-  get options() {
-    return {
-      resize: true,
-      speed: 300,
-      theme: 'slinky-theme-default',
-      title: false
-    }
+    get options() {
+        return {
+            resize: true,
+            speed: 300,
+            theme: 'slinky-theme-default',
+            title: false,
+            backBtnMarkup: '<a href="#" class="back"><i class="back-icon"></i></a>',
+            nextBtnMarkup: '<a href="#" class="next">%title%<i class="next-icon"></i></a>'
+        }
   }
 
   constructor(element, options = {}) {
@@ -41,14 +44,19 @@ class Slinky {
     // set transition speed
     this._transition(settings.speed)
 
-    // add arrows to links with children
-    jQuery('a + ul', menu)
-      .prev()
-      .addClass('next')
+      // add arrows to links with children
+      jQuery('a + ul', menu)
+          .prev().replaceWith(settings.nextBtnMarkup.replace('%title%', function () {
+          console.log(jQuery(this))
+      }));
+
+
 
     // wrap link text with <span>
     // mostly for styling
-    jQuery('li > a', menu).wrapInner('<span>')
+    /*jQuery('li > a', menu)
+        .wrapInner('<span>')
+        .after(settings.nextBtnMarkup)*/
 
     // create header item
     const header = jQuery('<li>').addClass('header')
@@ -57,9 +65,7 @@ class Slinky {
     jQuery('li > ul', menu).prepend(header)
 
     // create back buttons
-    const back = jQuery('<a>')
-      .prop('href', '#')
-      .addClass('back')
+      const back = jQuery(settings.backBtnMarkup);
 
     // prepend them to the headers
     jQuery('.header', menu).prepend(back)
