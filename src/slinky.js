@@ -14,8 +14,8 @@ class Slinky {
             speed: 300,
             theme: 'slinky-theme-default',
             title: false,
-            backBtnMarkup: '<a href="#" class="back"><i class="back-icon"></i></a>',
-            nextBtnMarkup: '<a href="#" class="next"><span>%title%</span><i class="next-icon"></i></a>'
+            backLabelMarkup: '<label><i class="back-icon"></i></label>',
+            nextLabelMarkup: '<label><span>%title%</span><i class="next-icon"></i></label>'
         }
   }
 
@@ -48,7 +48,10 @@ class Slinky {
 
       // add arrows to links with children
       jQuery('a + ul', menu).each(function (i, el) {
-          jQuery(el).prev().replaceWith(settings.nextBtnMarkup.replace('%title%', jQuery(el).prev().text()))
+          jQuery(el)
+              .prev()
+              .replaceWith(settings.nextLabelMarkup.replace('%title%', jQuery(el).prev().text()))
+
       });
 
 
@@ -59,7 +62,9 @@ class Slinky {
     jQuery('li > ul', menu).prepend(header)
 
     // create back buttons
-      const back = jQuery(settings.backBtnMarkup);
+      const back =
+          jQuery(settings.backLabelMarkup)
+              .addClass('back')
 
     // prepend them to the headers
     jQuery('.header', menu).prepend(back)
@@ -98,7 +103,7 @@ class Slinky {
   _addListeners() {
     const { menu, settings } = this
 
-    jQuery('a', menu).on('click', e => {
+    jQuery('label', menu).on('click', e => {
       // prevent broken/half transitions
       if (this._clicked + settings.speed > Date.now()) {
         return false
@@ -113,7 +118,7 @@ class Slinky {
       // prevent default if it's a hash
       // or a Slinky button
       if (
-        link.attr('href').indexOf('#') === 0 ||
+        //link.attr('href').indexOf('#') === 0 ||
         link.hasClass('next') ||
         link.hasClass('back')
       ) {
@@ -121,7 +126,36 @@ class Slinky {
       }
 
       // time to move
-      if (link.hasClass('next')) {
+      if (link.hasClass('back')) {
+          // and two steps back
+          // just one step back, actually
+
+          // make the move
+          this._move(-1, () => {
+              // remove the current active
+              menu.find('.active').removeClass('active')
+
+              // set the new active
+              link
+                  .parent()
+                  .parent()
+                  .hide()
+                  .parentsUntil(menu, 'ul')
+                  .first()
+                  .addClass('active')
+          })
+
+          // resize the menu if need be
+          if (settings.resize) {
+              this._resize(
+                  link
+                      .parent()
+                      .parent()
+                      .parentsUntil(menu, 'ul')
+              )
+          }
+
+      } else {
         // one step forward
 
         // remove the current active
@@ -140,35 +174,10 @@ class Slinky {
         if (settings.resize) {
           this._resize(link.next())
         }
-      } else if (link.hasClass('back')) {
-        // and two steps back
-        // just one step back, actually
-
-        // make the move
-        this._move(-1, () => {
-          // remove the current active
-          menu.find('.active').removeClass('active')
-
-          // set the new active
-          link
-            .parent()
-            .parent()
-            .hide()
-            .parentsUntil(menu, 'ul')
-            .first()
-            .addClass('active')
-        })
-
-        // resize the menu if need be
-        if (settings.resize) {
-          this._resize(
-            link
-              .parent()
-              .parent()
-              .parentsUntil(menu, 'ul')
-          )
-        }
       }
+
+
+
     })
   }
 

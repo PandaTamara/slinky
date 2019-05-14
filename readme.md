@@ -27,8 +27,8 @@ Option | Default | Description
 `resize` | `true` | Resize menu height to match content on navigation
 `speed` | `300` | Animation speed in `milliseconds`
 `theme` | `slinky-theme-default` | Slinky theme
-`backBtnMarkup` | `<a href="#" class="back"><i class="back-icon"></i></a>` | Markup of back button
-`nextBtnMarkup` | `<a href="#" class="next"><span>%title%</span><i class="next-icon"></i></a>` | Markup of next button, %title% will be replaced to href text
+`backLabelMarkup` | `<label><i class="back-icon"></i></label>` | Markup of back button
+`nextLabelMarkup` | `<label><span>%title%</span><i class="next-icon"></i></label>` | Markup of next button, %title% will be replaced to href text
 
 ## API
 

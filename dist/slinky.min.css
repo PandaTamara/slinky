@@ -13,10 +13,12 @@
     margin: 0; }
   .slinky-menu ul {
     width: 100%; }
-  .slinky-menu a {
+  .slinky-menu a, .slinky-menu label {
+    cursor: pointer;
     align-items: center;
     display: flex;
-    justify-content: space-between !important; }
+    justify-content: space-between !important;
+    margin: 0; }
   .slinky-menu li ul {
     display: none;
     left: 100%;
@@ -72,18 +74,20 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
     .slinky-theme-default li:last-child {
       border-bottom: 0; }
-    .slinky-theme-default li:hover > a > i {
+    .slinky-theme-default li:hover > label > i {
       opacity: 0.75; }
-  .slinky-theme-default a > i {
+  .slinky-theme-default label > i {
     width: 1em;
     margin-right: 0.5em;
     opacity: 0.5; }
-  .slinky-theme-default a:not(.back) {
+  .slinky-theme-default a:not(.back),
+  .slinky-theme-default label:not(.back) {
     color: #333;
     padding: 1em; }
-    .slinky-theme-default a:not(.back):hover {
+    .slinky-theme-default a:not(.back):hover,
+    .slinky-theme-default label:not(.back):hover {
       background: rgba(0, 0, 0, 0.06); }
-  .slinky-theme-default a.back {
+  .slinky-theme-default label.back {
     padding: 1em; }
   .slinky-theme-default .back-icon::before,
   .slinky-theme-default .next-icon::after {
