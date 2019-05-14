@@ -6,7 +6,17 @@
  * @license MIT
  */
 
+/**
+ * Static constants
+ */
+const
+    MAIN_CLASS = 'sm-wrap',
+    HEADER_CLASS = 'sm-header',
+    TITLE_CLASS = 'sm-title',
+    BACK_CLASS = 'sm-back';
+
 class Slinky {
+
   // default options
     get options() {
         return {
@@ -15,7 +25,10 @@ class Slinky {
             theme: 'slinky-theme-default',
             title: false,
             backLabelMarkup: '<label><i class="back-icon"></i></label>',
-            nextLabelMarkup: '<label><span>%title%</span><i class="next-icon"></i></label>'
+            nextLabelMarkup: '<label><span>%title%</span><i class="next-icon"></i></label>',
+            mainClass: false,
+            headerClass: false,
+            backClass: false
         }
   }
 
@@ -39,12 +52,10 @@ class Slinky {
     const { base, menu, settings } = this
 
     // set theme
-    menu.addClass('slinky-menu').addClass(settings.theme)
+    menu.addClass(MAIN_CLASS).addClass(settings.mainClass).addClass(settings.theme)
 
     // set transition speed
     this._transition(settings.speed)
-
-
 
       // add arrows to links with children
       jQuery('a + ul', menu).each(function (i, el) {
@@ -56,7 +67,7 @@ class Slinky {
 
 
     // create header item
-    const header = jQuery('<li>').addClass('header')
+    const header = jQuery('<li>').addClass(HEADER_CLASS).addClass(settings.headerClass)
 
     // prepend it to the list
     jQuery('li > ul', menu).prepend(header)
@@ -64,10 +75,11 @@ class Slinky {
     // create back buttons
       const back =
           jQuery(settings.backLabelMarkup)
-              .addClass('back')
+              .addClass(BACK_CLASS)
+              .addClass(settings.backClass)
 
     // prepend them to the headers
-    jQuery('.header', menu).prepend(back)
+    jQuery('.' + HEADER_CLASS, menu).prepend(back)
 
     // do we need to add titles?
     if (settings.title) {
@@ -83,11 +95,11 @@ class Slinky {
         // if it's not empty, create the title
         if (label) {
           const title = jQuery('<header>')
-            .addClass('title')
+            .addClass(TITLE_CLASS)
             .text(label)
 
           // append it to the immediate header
-          jQuery('> .header', element).append(title)
+          jQuery('> .' + HEADER_CLASS, element).append(title)
         }
       })
     }
@@ -115,18 +127,9 @@ class Slinky {
       // get the link
       const link = jQuery(e.currentTarget)
 
-      // prevent default if it's a hash
-      // or a Slinky button
-      if (
-        //link.attr('href').indexOf('#') === 0 ||
-        link.hasClass('next') ||
-        link.hasClass('back')
-      ) {
-        e.preventDefault()
-      }
 
       // time to move
-      if (link.hasClass('back')) {
+      if (link.hasClass(BACK_CLASS)) {
           // and two steps back
           // just one step back, actually
 
@@ -175,8 +178,6 @@ class Slinky {
           this._resize(link.next())
         }
       }
-
-
 
     })
   }
@@ -333,10 +334,10 @@ class Slinky {
 
   // crush, kill, destroy
   destroy() {
-    const { base, menu } = this
+    const { base, menu, settings } = this
 
     // remove all headers
-    jQuery('.header', menu).remove()
+    jQuery('.' + HEADER_CLASS, menu).remove()
 
     // remove Slinky links
     // and click listeners

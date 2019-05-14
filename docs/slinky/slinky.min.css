@@ -1,36 +1,37 @@
-.slinky-menu {
+.sm-wrap {
   overflow: hidden;
   -webkit-transform: translateZ(0);
           transform: translateZ(0); }
-  .slinky-menu > ul {
+  .sm-wrap > ul {
     left: 0;
     position: relative;
     -webkit-transform: translateZ(0);
             transform: translateZ(0); }
-  .slinky-menu ul,
-  .slinky-menu li {
+  .sm-wrap ul,
+  .sm-wrap li {
     list-style: none;
     margin: 0; }
-  .slinky-menu ul {
+  .sm-wrap ul {
     width: 100%; }
-  .slinky-menu a, .slinky-menu label {
+  .sm-wrap a, .sm-wrap label {
     cursor: pointer;
     align-items: center;
     display: flex;
     justify-content: space-between !important;
     margin: 0; }
-  .slinky-menu li ul {
+  .sm-wrap li ul {
     display: none;
     left: 100%;
     position: absolute;
     top: 0; }
-  .slinky-menu .header {
-    display: flex; }
-    .slinky-menu .header .title {
-      flex: 1;
-      line-height: 1.4;
-      margin: 0;
-      order: 1; }
+
+.sm-header {
+  display: flex; }
+  .sm-header .title {
+    flex: 1;
+    line-height: 1.4;
+    margin: 0;
+    order: 1; }
 
 .slinky-theme-default {
   background: #f6f7f8;
@@ -69,6 +70,8 @@
   .slinky-theme-default .title {
     color: #333;
     padding: 1em; }
+  .slinky-theme-default .sm-header {
+    background-color: #fff; }
   .slinky-theme-default li {
     line-height: 1;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
@@ -80,14 +83,14 @@
     width: 1em;
     margin-right: 0.5em;
     opacity: 0.5; }
-  .slinky-theme-default a:not(.back),
-  .slinky-theme-default label:not(.back) {
+  .slinky-theme-default a:not(.sm-back),
+  .slinky-theme-default label:not(.sm-back) {
     color: #333;
     padding: 1em; }
-    .slinky-theme-default a:not(.back):hover,
-    .slinky-theme-default label:not(.back):hover {
+    .slinky-theme-default a:not(.sm-back):hover,
+    .slinky-theme-default label:not(.sm-back):hover {
       background: rgba(0, 0, 0, 0.06); }
-  .slinky-theme-default label.back {
+  .slinky-theme-default label.sm-back {
     padding: 1em; }
   .slinky-theme-default .back-icon::before,
   .slinky-theme-default .next-icon::after {

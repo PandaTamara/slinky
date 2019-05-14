@@ -1,6 +1,6 @@
 // required styles
 
-.slinky-menu {
+.sm-wrap {
   overflow: hidden;
   transform: translateZ(0);
 
@@ -34,27 +34,36 @@
     position: absolute;
     top: 0;
   }
+}
 
-  .header {
-    display: flex;
+.sm-header {
+  display: flex;
 
-    .title {
-      flex: 1;
-      line-height: 1.4;
-      margin: 0;
-      order: 1;
-    }
+  .sm-back {
+
+  }
+
+  .sm-title {
+    flex: 1;
+    line-height: 1.4;
+    margin: 0;
+    order: 1;
   }
 }
+
 
 // default theme
 
 .slinky-theme-default {
   background: #f6f7f8;
 
-  .title {
+  .sm-title {
     color: #333;
     padding: 1em;
+  }
+
+  .sm-header {
+    background-color: #fff;
   }
 
   li {
@@ -83,8 +92,8 @@
   }
 
 
-  a:not(.back),
-  label:not(.back) {
+  a:not(.sm-back),
+  label:not(.sm-back) {
     color: #333;
     padding: 1em;
 
@@ -93,7 +102,7 @@
     }
   }
 
-  label.back {
+  label.sm-back {
     padding: 1em;
   }
 
