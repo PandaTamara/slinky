@@ -4,7 +4,7 @@ Rather sweet menus. A light-weight, responsive, mobile-like navigation menu plug
 
 This fork based by slinky plugin ([Demo](https://alizahid.github.io/slinky/))
 
-###Base diffs
+### Base diffs
 
 1. More options for customisations
 2. Removed height jumping
@@ -27,7 +27,8 @@ Option | Default | Description
 `resize` | `true` | Resize menu height to match content on navigation
 `speed` | `300` | Animation speed in `milliseconds`
 `theme` | `slinky-theme-default` | Slinky theme
-`title` | `false` | Show title of sub menu
+`backBtnMarkup` | `<a href="#" class="back"><i class="back-icon"></i></a>` | Markup of back button
+`nextBtnMarkup` | `<a href="#" class="next"><span>%title%</span><i class="next-icon"></i></a>` | Markup of next button, %title% will be replaced to href text
 
 ## API
 

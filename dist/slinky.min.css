@@ -15,10 +15,8 @@
     width: 100%; }
   .slinky-menu a {
     align-items: center;
-    display: flex; }
-    .slinky-menu a span {
-      flex: 1;
-      line-height: 1.4; }
+    display: flex;
+    justify-content: space-between !important; }
   .slinky-menu li ul {
     display: none;
     left: 100%;
@@ -34,6 +32,10 @@
 
 .slinky-theme-default {
   background: #f6f7f8;
+  /*.back-icon:hover::before,
+  .next-icon:hover::after{
+    opacity: 0.75;
+  }*/
   /*.next::after,
   .back::before {
     background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICAgIDxwYXRoIGQ9Ik0xMi4yMTkgMi4yODFMMTAuNzggMy43MiAxOC4wNjIgMTFIMnYyaDE2LjA2M2wtNy4yODIgNy4yODEgMS40MzggMS40MzggOS05IC42ODctLjcxOS0uNjg3LS43MTl6IiAvPjwvc3ZnPg==) center no-repeat;
@@ -52,22 +54,35 @@
   .back::before {
     padding: 1em;
     transform: scaleX(-1);
+  }*/
+  /*.next:hover::after,
+  .back:hover::before {
+    opacity: 0.75;
+  }
+
+  .next:active::after,
+  .back:active::before {
+    opacity: 1;
   }*/ }
   .slinky-theme-default .title {
     color: #333;
     padding: 1em; }
   .slinky-theme-default li {
-    line-height: 1; }
+    line-height: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
+    .slinky-theme-default li:last-child {
+      border-bottom: 0; }
+    .slinky-theme-default li:hover > a > i {
+      opacity: 0.75; }
   .slinky-theme-default a > i {
     width: 1em;
-    margin-right: 0.5em; }
+    margin-right: 0.5em;
+    opacity: 0.5; }
   .slinky-theme-default a:not(.back) {
     color: #333;
     padding: 1em; }
     .slinky-theme-default a:not(.back):hover {
-      background: rgba(90, 200, 250, 0.25); }
-    .slinky-theme-default a:not(.back):active {
-      background: rgba(90, 200, 250, 0.5); }
+      background: rgba(0, 0, 0, 0.06); }
   .slinky-theme-default a.back {
     padding: 1em; }
   .slinky-theme-default .back-icon::before,
@@ -76,19 +91,9 @@
     background-size: 1em;
     content: '';
     height: 1em;
-    opacity: 0.25;
     transition: 200ms;
     width: 1em;
     display: inline-block; }
   .slinky-theme-default .back-icon::before {
     -webkit-transform: scaleX(-1);
             transform: scaleX(-1); }
-  .slinky-theme-default .back-icon:hover::before,
-  .slinky-theme-default .next-icon:hover::after {
-    opacity: 0.75; }
-  .slinky-theme-default .next:hover::after,
-  .slinky-theme-default .back:hover::before {
-    opacity: 0.75; }
-  .slinky-theme-default .next:active::after,
-  .slinky-theme-default .back:active::before {
-    opacity: 1; }

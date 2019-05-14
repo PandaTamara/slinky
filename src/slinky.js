@@ -15,7 +15,7 @@ class Slinky {
             theme: 'slinky-theme-default',
             title: false,
             backBtnMarkup: '<a href="#" class="back"><i class="back-icon"></i></a>',
-            nextBtnMarkup: '<a href="#" class="next">%title%<i class="next-icon"></i></a>'
+            nextBtnMarkup: '<a href="#" class="next"><span>%title%</span><i class="next-icon"></i></a>'
         }
   }
 
@@ -44,19 +44,13 @@ class Slinky {
     // set transition speed
     this._transition(settings.speed)
 
+
+
       // add arrows to links with children
-      jQuery('a + ul', menu)
-          .prev().replaceWith(settings.nextBtnMarkup.replace('%title%', function () {
-          console.log(jQuery(this))
-      }));
+      jQuery('a + ul', menu).each(function (i, el) {
+          jQuery(el).prev().replaceWith(settings.nextBtnMarkup.replace('%title%', jQuery(el).prev().text()))
+      });
 
-
-
-    // wrap link text with <span>
-    // mostly for styling
-    /*jQuery('li > a', menu)
-        .wrapInner('<span>')
-        .after(settings.nextBtnMarkup)*/
 
     // create header item
     const header = jQuery('<li>').addClass('header')
