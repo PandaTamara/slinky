@@ -27,6 +27,7 @@ class Slinky {
             title: true,
             backLabelMarkup: '<label><i class="sm-back-icon"></i></label>',
             nextLabelMarkup: '<label>%title%<i class="sm-next-icon"></i></label>',
+            titleLabelMarkup: '<label />',
             mainClass: false,
             headerClass: false,
             backClass: false,

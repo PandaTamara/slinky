@@ -8,14 +8,15 @@ const sourcemaps = require('gulp-sourcemaps')
 const uglify = require('gulp-uglify')
 
 gulp.task('slinky-js', () =>
-  gulp
-    .src('src/slinky.js')
-    .pipe(sourcemaps.init())
-    .pipe(babel())
-    .pipe(uglify())
-    .pipe(rename('slinky.min.js'))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist'))
+    gulp
+        .src('src/slinky.js')
+        .pipe(gulp.dest('dist'))
+        .pipe(sourcemaps.init())
+        .pipe(babel())
+        .pipe(uglify())
+        .pipe(rename('slinky.min.js'))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('dist'))
 )
 
 gulp.task('slinky-css', () =>
