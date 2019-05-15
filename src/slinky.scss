@@ -38,13 +38,11 @@
 
 .sm-header {
   display: flex;
+  flex-direction: column;
 
-  .sm-title {
-    flex: 1;
-    line-height: 1.4;
-    margin: 0;
-    order: 1;
-  }
+  .sm-back {}
+
+  .sm-title {}
 }
 
 .sm-next {

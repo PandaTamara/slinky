@@ -5,11 +5,21 @@
 
   .sm-header {
     background-color: #fff;
-  }
 
-  .sm-title {
-    color: #333;
-    padding: 1em;
+    .sm-back {
+      color: #bbb;
+
+      > i {
+        margin-right: 0.5em;
+      }
+    }
+
+    .sm-title {
+      color: #333;
+      padding: 0 1em 1.25em;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
   }
 
   li {
@@ -28,26 +38,19 @@
 
   label, a {
     padding: 1em;
+    color: #333;
 
     > i {
       opacity: 0.5;
       font-size: 87%;
     }
-
-    &:not(.sm-back) {
-      color: #333;
-
-      &:hover {
-        background: rgba(0, 0, 0, 0.06);
-      }
-    }
   }
 
-  .sm-back {
-    color: #bbb;
 
-    > i {
-      margin-right: 0.5em;
+
+  .sm-next {
+    &:hover {
+      background: rgba(0, 0, 0, 0.06);
     }
   }
 

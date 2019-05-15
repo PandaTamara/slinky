@@ -27,6 +27,7 @@ Option | Default | Description
 `resize` | `true` | Resize menu height to match content on navigation
 `speed` | `300` | Animation speed in `milliseconds`
 `theme` | `false` | Slinky theme
+`title` | `true` | Show submenu title
 `backLabelMarkup` | `<label><i class="sm-back-icon"></i></label>` | Markup of back button
 `nextLabelMarkup` | `<label>%title%<i class="sm-next-icon"></i></label>` | Markup of next button, %title% will be replaced to href text
 `mainClass` | `false` | String with classes for root element

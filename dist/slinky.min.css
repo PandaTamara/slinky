@@ -26,12 +26,8 @@
     top: 0; }
 
 .sm-header {
-  display: flex; }
-  .sm-header .sm-title {
-    flex: 1;
-    line-height: 1.4;
-    margin: 0;
-    order: 1; }
+  display: flex;
+  flex-direction: column; }
 
 .sm-next > i {
   margin-left: auto; }
