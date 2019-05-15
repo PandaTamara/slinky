@@ -13,6 +13,7 @@ const
     MAIN_CLASS = 'sm-wrap',
     HEADER_CLASS = 'sm-header',
     TITLE_CLASS = 'sm-title',
+    NEXT_CLASS = 'sm-next',
     BACK_CLASS = 'sm-back';
 
 class Slinky {
@@ -25,10 +26,11 @@ class Slinky {
             theme: 'sm-theme-default',
             title: false,
             backLabelMarkup: '<label><i class="sm-back-icon"></i></label>',
-            nextLabelMarkup: '<label><span>%title%</span><i class="sm-next-icon"></i></label>',
+            nextLabelMarkup: '<label>%title%<i class="sm-next-icon"></i></label>',
             mainClass: false,
             headerClass: false,
-            backClass: false
+            backClass: false,
+            nextClass: false
         }
   }
 
@@ -61,7 +63,10 @@ class Slinky {
       jQuery('a + ul', menu).each(function (i, el) {
           jQuery(el)
               .prev()
-              .replaceWith(settings.nextLabelMarkup.replace('%title%', jQuery(el).prev().text()))
+              .replaceWith(jQuery(settings.nextLabelMarkup.replace('%title%', jQuery(el).prev().text()))
+                  .addClass(NEXT_CLASS)
+                  .addClass(settings.nextClass)
+              )
 
       });
 

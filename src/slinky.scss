@@ -24,7 +24,7 @@
     cursor: pointer;
     align-items: center;
     display: flex;
-    justify-content: space-between !important;
+    width: 100%;
     margin: 0;
   }
 
@@ -44,6 +44,12 @@
     line-height: 1.4;
     margin: 0;
     order: 1;
+  }
+}
+
+.sm-next {
+  > i {
+    margin-left: auto;
   }
 }
 

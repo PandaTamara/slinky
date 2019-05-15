@@ -17,7 +17,7 @@
     cursor: pointer;
     align-items: center;
     display: flex;
-    justify-content: space-between !important;
+    width: 100%;
     margin: 0; }
   .sm-wrap li ul {
     display: none;
@@ -32,6 +32,9 @@
     line-height: 1.4;
     margin: 0;
     order: 1; }
+
+.sm-next > i {
+  margin-left: auto; }
 
 .sm-theme-default {
   background-color: #f6f7f8; }
