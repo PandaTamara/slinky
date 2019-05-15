@@ -199,7 +199,11 @@
 		</section>
 		<section>
 			<h2>Usage</h2>
-			<code>const slinky = $(&#8230;).slinky(options)</code>
+			<code>
+				<pre>$(&#8230;).slinky({
+    theme: 'sm-theme-default'
+})</pre>
+			</code>
 		</section>
 	</main>
 
@@ -208,7 +212,8 @@
 	<script>
 		const slinky = $('#menu').slinky({
             backLabelMarkup: '<label><i class="fas fa-chevron-left"></i>Back</label>',
-            //nextLabelMarkup: '<label><span>%title%</span><i class="fas fa-chevron-right"></i></label>'
+            nextLabelMarkup: '<label>%title%<i class="fas fa-chevron-right"></i></label>',
+			theme: 'sm-theme-default'
 		})
 	</script>
 </body>

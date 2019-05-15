@@ -23,7 +23,7 @@ class Slinky {
         return {
             resize: true,
             speed: 300,
-            theme: 'sm-theme-default',
+            theme: false,
             title: false,
             backLabelMarkup: '<label><i class="sm-back-icon"></i></label>',
             nextLabelMarkup: '<label>%title%<i class="sm-next-icon"></i></label>',
