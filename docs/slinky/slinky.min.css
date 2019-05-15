@@ -35,39 +35,3 @@
 
 .sm-next > i {
   margin-left: auto; }
-
-.sm-theme-default {
-  background-color: #f6f7f8; }
-  .sm-theme-default .sm-header {
-    background-color: #fff; }
-  .sm-theme-default .sm-title {
-    color: #333;
-    padding: 1em; }
-  .sm-theme-default li:not(:last-child) {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
-  .sm-theme-default li:hover > label > i {
-    opacity: 0.75; }
-  .sm-theme-default label, .sm-theme-default a {
-    padding: 1em; }
-    .sm-theme-default label > i, .sm-theme-default a > i {
-      opacity: 0.5;
-      font-size: 87%; }
-    .sm-theme-default label:not(.sm-back), .sm-theme-default a:not(.sm-back) {
-      color: #333; }
-      .sm-theme-default label:not(.sm-back):hover, .sm-theme-default a:not(.sm-back):hover {
-        background: rgba(0, 0, 0, 0.06); }
-  .sm-theme-default .sm-back {
-    color: #bbb; }
-    .sm-theme-default .sm-back > i {
-      margin-right: 0.5em; }
-  .sm-theme-default .sm-back-icon::before,
-  .sm-theme-default .sm-next-icon::before {
-    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICAgIDxwYXRoIGQ9Ik0xMi4yMTkgMi4yODFMMTAuNzggMy43MiAxOC4wNjIgMTFIMnYyaDE2LjA2M2wtNy4yODIgNy4yODEgMS40MzggMS40MzggOS05IC42ODctLjcxOS0uNjg3LS43MTl6IiAvPjwvc3ZnPg==) center/1em no-repeat;
-    content: '';
-    height: 1em;
-    width: 1em;
-    transition: 200ms;
-    display: inline-block; }
-  .sm-theme-default .back-icon::before {
-    -webkit-transform: scaleX(-1);
-            transform: scaleX(-1); }
