@@ -24,7 +24,7 @@
 	<main>
 		<section>
 			<h2>Demo</h2>
-			<div id="menu">
+			<div data-toggle="slinky">
 				<ul>
 					<li>
 						<a href="https://designplox.com/">designplox</a>
@@ -211,7 +211,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="slinky/slinky.min.js"></script>
 	<script>
-		const slinky = $('#menu').slinky({
+		const slinky = $('[data-toggle="slinky"]').slinky({
             backLabelMarkup: '<label><i class="fas fa-chevron-left"></i>Back</label>',
             nextLabelMarkup: '<label>%title%<i class="fas fa-chevron-right"></i></label>',
 			theme: 'sm-theme-default',

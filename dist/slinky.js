@@ -27,7 +27,6 @@ class Slinky {
             title: true,
             backLabelMarkup: '<label><i class="sm-back-icon"></i></label>',
             nextLabelMarkup: '<label>%title%<i class="sm-next-icon"></i></label>',
-            titleLabelMarkup: '<label />',
             mainClass: false,
             headerClass: false,
             backClass: false,
@@ -122,6 +121,7 @@ class Slinky {
             jQuery(el)
                 .prev()
                 .replaceWith(jQuery(settings.nextLabelMarkup.replace('%title%', jQuery(el).prev().text()))
+                    .addClass(jQuery(el).prev().attr('class'))
                     .addClass(NEXT_CLASS)
                     .addClass(settings.nextClass)
                 )

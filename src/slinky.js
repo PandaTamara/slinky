@@ -121,6 +121,7 @@ class Slinky {
             jQuery(el)
                 .prev()
                 .replaceWith(jQuery(settings.nextLabelMarkup.replace('%title%', jQuery(el).prev().text()))
+                    .addClass(jQuery(el).prev().attr('class'))
                     .addClass(NEXT_CLASS)
                     .addClass(settings.nextClass)
                 )
