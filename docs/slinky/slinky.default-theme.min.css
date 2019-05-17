@@ -3,12 +3,11 @@
   .sm-theme-default .sm-header {
     background-color: #fff; }
     .sm-theme-default .sm-header .sm-back {
-      color: #bbb; }
+      color: #bbb;
+      padding: 0 1em 1.25em; }
       .sm-theme-default .sm-header .sm-back > i {
         margin-right: 0.5em; }
     .sm-theme-default .sm-header .sm-title {
-      color: #333;
-      padding: 0 1em 1.25em;
       text-transform: uppercase;
       font-weight: bold; }
   .sm-theme-default li:not(:last-child) {

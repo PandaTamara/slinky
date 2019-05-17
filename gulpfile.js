@@ -13,6 +13,7 @@ gulp.task('slinky-js', () =>
         .pipe(gulp.dest('dist'))
         .pipe(sourcemaps.init())
         .pipe(babel())
+        .pipe(gulp.dest('dist'))
         .pipe(uglify())
         .pipe(rename('slinky.min.js'))
         .pipe(sourcemaps.write('.'))

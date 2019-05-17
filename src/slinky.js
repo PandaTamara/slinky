@@ -67,7 +67,6 @@ class Slinky {
         jQuery('li > ul', menu).prepend(header)
 
         // do we need to add titles?
-        console.log(settings.title);
         if (settings.title) {
             // loop through each child list
             jQuery('li > ul', menu).each((index, element) => {
@@ -77,32 +76,17 @@ class Slinky {
                     .find('a')
                     .first()
 
-                console.log(label.text());
-                console.log('--');
-
                 // if it's not empty, create the title
                 if (label) {
-                    /*const title = jQuery('<header>')
-                      .addClass(TITLE_CLASS)
-                      .text(label)*/
-
                     const title = jQuery(label.attr('href') === '#' ? jQuery('<label>') : jQuery('<a>').attr('href', label.attr('href')))
                         .addClass(TITLE_CLASS)
                         .addClass(settings.titleClass)
                         .text(label.text())
-
-                    //console.log(title);
-
                     // append it to the immediate header
-                    // TODO use header var
                     jQuery('> .' + HEADER_CLASS, element).append(title)
-
-                    //jQuery(header, element).append(title)
 
                 }
             })
-
-            console.log('-------');
         }
 
 
@@ -114,14 +98,13 @@ class Slinky {
                 .addClass(settings.backClass)
 
         // prepend them to the headers
-        jQuery('.' + HEADER_CLASS, menu).prepend(back)
+        jQuery('.' + HEADER_CLASS, menu).append(back)
 
         // add arrows to links with children
         jQuery('a + ul', menu).each(function (i, el) {
             jQuery(el)
                 .prev()
                 .replaceWith(jQuery(settings.nextLabelMarkup.replace('%title%', jQuery(el).prev().text()))
-                    .addClass(jQuery(el).prev().attr('class'))
                     .addClass(NEXT_CLASS)
                     .addClass(settings.nextClass)
                 )
